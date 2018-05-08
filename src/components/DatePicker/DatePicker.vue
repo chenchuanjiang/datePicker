@@ -169,8 +169,11 @@ export default {
             for (let m = 0; m < this.hierarchy.length; m++) {
                 texts.push(this.dateData[m][this.hierarchy[m]]);
             }
-            if (!!!texts[texts.length]) {
-                texts[texts.length -1] = this.dateData[this.dateData.length -1][this.dateData[this.dateData.length -1].length -1]
+            if (!texts[texts.length - 1]) {
+                texts[texts.length - 1] = this.dateData[this.dateData.length -1][this.dateData[this.dateData.length -1].length -1]
+            }
+            if (!texts[texts.length - 2]) {
+                texts[texts.length - 2] = this.dateData[this.dateData.length -2][this.dateData[this.dateData.length -2].length -1]
             }
             this.$emit('sureClick', this.hierarchy, texts);
         },
